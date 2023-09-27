@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="YTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockGPT</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        ul {
+            list-style-type: none; /* Remove the default list style */
+        }
+
+        /* Split the screen in half */
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        /* Control the left side */
+        .left {
+            left: 0;
+        }
+
+
+
+        /* Control the right side */
+        .right {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to StockGPT</h1>
+        <p>Get instant stock information and analysis.</p>
+    </div>
+
+
+    <div class="left">
+        <div class="search-form">
+            <form action="{{ url_for('home') }}" method="POST">
+                <h1>
+                    <input type="text" name="symbol" placeholder="Enter a stock symbol" class="search-input">
+                    <button type="submit" class="search-button">Search</button>
+                </h1>
+            </form>
+        </div>
+
+        <div class="stock-recommendation">
+            <h3>Stock Recommendation</h3>
+            <ul id="recomadation-list">
+                {% if recommendations %}
+                <h3>Rating for Next 1 Year: {{ recommendations['Rating of next 1-year'] }}</h3>
+                <h3>Rating for Next 10 Years: {{ recommendations['Rating of next 10-year'] }}</h3>
+                {% else %}
+                <p>No recommendations available</p>
+                {% endif %}
+            </ul>
+        </div>
+
+
+        <div class="stock-info">
+            <h2>Stock Information</h2>
+            <table id="stock-table">
+                {% if value %}
+                <tr>
+                    <td>Company Name</td>
+                    <td>{{ value.company_name }}</td>
+                </tr>
+                <tr>
+                    <td>Current Price</td>
+                    <td>{{ value.current_price }}</td>
+                </tr>
+                <tr>
+                    <td>Previous Close</td>
+                    <td>{{ value.previous_close }}</td>
+                </tr>
+                <tr>
+                    <td>Open Price</td>
+                    <td>{{ value.open_price }}</td>
+                </tr>
+                <tr>
+                    <td>Sector</td>
+                    <td>{{ value.sector }}</td>
+                </tr>
+                <tr>
+                    <td>PE Ratio</td>
+                    <td>{{ value.pe_ratio }}</td>
+                </tr>
+                <tr>
+                    <td>PS Ratio</td>
+                    <td>{{ value.ps_ratio }}</td>
+                </tr>
+                <tr>
+                    <td>Return on Equity (ROE)</td>
+                    <td>{{ value.roe }}</td>
+                </tr>
+                <!-- Add more data points as needed -->
+                {% endif %}
+            </table>
+        </div>
+
+        <div class="news">
+            <h2>News</h2>
+            <ul id="news-list">
+                {% if news %}
+                {% for item in news %}
+                <li>{{ item }}</li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="chat-box-container">
+            <div class="chat-box-content">
+                <div id="chat-messages" class="chat-messages"></div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="user-input" class="user-input" placeholder="Type your message" onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()" class="send-button">Send</button>
+            <button id="startRecord" onclick="startRecording()">Start Recording</button>
+            <button id="stopRecord" onclick="stopRecording()" disabled>Stop Recording</button>
+        </div>
+    </div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

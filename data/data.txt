@@ -1,0 +1,70 @@
+Team/Web name : StockGPT
+Sampled basic functions of StockGPT
+Question from user	Answer by StockGPT	Note
+1. what is the top AI stocks?	NVDA,GOOG,MSFT	Just pull Answer from Bard or other open LLM model
+2. what is the projection of NVDA stock price in next 10 years?	800	We do AI prediction by ourselves
+3. what is short-term risk to buy NVDA stock now?  	high risk of market down as high inflation,high interest rate.	Copy from top market/policy news, plus we label quickly
+
+Development tasks	Roles/more task info	Team member	Note	Status	Start Date	End Date
+1.Set up github	follow up with everyone, track progress			6/12
+2.Business model & analysis	Business model,public data sources,product demands in the marketShan Jiang
+
+
+3.Python Coding	GPT query real-time stock related data from open source like yahoo finance/etc, json api	 	https://github.com/ranaroussi/yfinance
+
+4.Data pocessing	Save data in excel in the early stage. Later on, more  data storage strategy and databases	All
+
+5.Apply LLM/GPT/etc model to our own model	Copy Answers(e.g, Question 1) from GPT/Bard, and save as excel		https://github.com/hsong1101/Stock-Price-Prediction-with-BERT
+
+6.Data mining	Capture pattern,data mining,analysis on the data pulled from LLM/GPT model	Leon, Pei
+
+7.Train AI based on market data to answer question 2/3	Do an easy version of prediction model in the early stage	Shan, Leon,Pei	If task #5 can porovide QA and stock price predcition.We could skip this step
+
+8. Trading strategy/recommendation	Short-term trade? Long term? Daily?Wave-based?Carry trade? Etc	Shan Jiang
+
+9.Build a web or mobile app to reach customer
+
+10. UI/UX of web, mobile app		Shan Jiang				7/31
+Here is a S&P500 index from 2018-01-19 to 2023-6-22 for your refe:
+2023-06-01,S&P500:4221.02
+2023-06-02,S&P500:4282.37
+2023-06-05,S&P500:4273.79
+2023-06-06,S&P500:4283.85
+2023-06-07,S&P500:4267.52
+2023-06-08,S&P500:4293.93
+2023-06-09,S&P500:4298.86
+2023-06-12,S&P500:4338.93
+2023-06-13,S&P500:4369.01
+2023-06-14,S&P500:4372.59
+2023-06-15,S&P500:4425.84
+2023-06-16,S&P500:4409.59
+2023-06-20,S&P500:4388.71
+2023-06-21,S&P500:4365.69
+2023-06-22: S&P500:4381.89
+if user ask a date is not given then answer the data is coming
+here is a apple Inc. (APPL) stock information
+Current	3/31/2023	12/31/2022	9/30/2022	6/30/2022
+Market Cap (intraday)	3.05T	2.61T	2.07T	2.20T	2.20T
+Enterprise Value	3.10T	2.67T	2.14T	2.27T	2.27T
+Trailing P/E	32.13	28.00	21.27	22.84	22.23
+Forward P/E	28.82	27.86	21.28	21.83	21.55
+PEG Ratio (5 yr expected)	2.60	2.79	2.53	2.47	2.38
+Price/Sales (ttm)	7.90	6.89	5.38	5.87	5.87
+Price/Book (mrq)	47.97	45.99	40.62	37.92	32.65
+Enterprise Value/Revenue	8.06	28.14	18.26	25.24	27.35
+Enterprise Value/EBITDA	24.48	85.49	54.93	81.95	87.67
+If user ask buy stock recommendation answer from here is some more stock information:
+Stock	Price	1-year lowest	1-year highest	GPT reasoning and ranking(1-10,10 is most positive)	Stock	Rating of next 1-year	Rating of next 10-year
+aapl	186	    124	    187	9	aapl	UnderPerform	Buy
+msft	335	    213	351	9	msft	UnderPerform	Buy
+goog	123	    83	129	9	goog	UnderPerform	Buy
+amzn	129	    81	146	9	amzn	UnderPerform	Buy
+
+If user ask buy stock recommendation answer from here is some more stock informatio:
+Underperform equal to sell/no buy
+Stock	Price	1-year lowest	1-year highest	GPT reasoning and ranking(1-10,10 is most positive)	Stock	Rating of next 1-year	Rating of next 10-year
+nvda	422	    108	440	9	nvda	UnderPerform/sell	Buy
+
+tsla	256	    102	314	8	tsla	UnderPerform	Buy
+brkb	335	    260	341	9	brkb	UnderPerform	OutPerform
+meta	288	    88	290	8	meta	UnderPerform	Hold

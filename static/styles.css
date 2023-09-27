@@ -1,0 +1,360 @@
+body {
+  background: wheat;
+}
+
+.header {
+    max-width: calc(28% - 40px);  /* Adjusted to be the same as .left */
+    height: 18%;
+    margin: 1em 20px 0.5em 20px;
+    font-weight: 800;
+    font-family: 'Titillium Web', sans-serif;
+    padding: 10px 10px 10px 10px;
+    color: rgba(44, 42, 42, 0.86);
+    background-color: #ffb660;
+    text-align: center;
+    border-radius: 30px;
+}
+
+
+.left {
+    max-width: calc(28% - 40px);
+    height: 86vh;
+    z-index: 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 30px;
+    margin: 1em 20px 0 20px;
+    background-color: antiquewhite;
+}
+/* Styles for the search form container */
+.search-form {
+    position: relative; /* To contain the leaves */
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: #f9d6ac;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height:7%;
+}
+
+/* Styles for the search input box */
+.search-input {
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 10px 50px 10px 0;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    background-color: #f9d6ac;
+}
+
+
+    /* Styles for the search button */
+.search-button {
+    background-color: #ff8a5c; /* Coral pink */
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 0 30px 30px 0;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+    /* Hover effect for the search button */
+    .search-button:hover {
+        background-color: #ff6347; /* Darker coral pink */
+    }
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.search-form::before,
+.search-form::after {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-image: url('https://www.forestessentialsindia.com/blog/wp-content/uploads/2020/02/Peepul-Leaf.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.search-form::before {
+    bottom: -30px; /* Position at the bottom left corner */
+    left: -15px;
+}
+
+.search-form::after {
+    top: -25px; /* Position at the upper right corner */
+    right: -15px;
+}
+
+/* Adjust position of the text "Enter a stock symbol" */
+
+
+
+#stock-table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: antiquewhite;
+    position: relative;
+}
+
+    #stock-table td {
+        padding: 8px;
+        border: none; /* Remove default table cell border */
+        position: relative;
+        font-size:20px;
+    }
+
+    #stock-table tr:not(:first-child) td {
+        border-top: 1px solid #ddd; /* Add horizontal lines between rows */
+    }
+
+    #stock-table tr:last-child td {
+        border-bottom: 1px solid #ddd; /* Add border to the last row */
+    }
+
+    /* Add fancy frames */
+    #stock-table td::before,
+    #stock-table td::after {
+        content: "";
+        position: absolute;
+        top: -3px;
+        bottom: -3px;
+        left: -3px;
+        right: -3px;
+        border: 1px solid #aaa;
+        pointer-events: none; /* Ensure pseudo-elements do not interfere with interactions */
+    }
+
+    #stock-table td::after {
+        z-index: -1;
+    }
+
+    /* Decorative borders for the first column */
+    #stock-table td:first-child::before,
+    #stock-table td:first-child::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 4px; /* Adjust the width of the border */
+        background-color: #ff9800; /* Customize the color of the left border */
+    }
+
+    /* Decorative borders for the second column */
+    #stock-table td:nth-child(2)::before,
+    #stock-table td:nth-child(2)::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 4px; /* Adjust the width of the border */
+        background-color: #2196f3; /* Customize the color of the right border */
+    }
+
+
+
+
+h2 {
+    color: orange;
+    font-weight: bolder;
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+#news-list {
+    font-size: 21px;
+    padding:0 0 0 5px;
+}
+
+#balance-sheet-list {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+    font-size: 21px;
+    padding: 0 0 0 5px;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 2px;
+    background-color: antiquewhite;
+    color: black;
+}
+
+ul li:before {
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-size: 20px;
+    background-image: url("https://img.freepik.com/free-vector/cute-whale-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-vector-flat-cartoon-style_138676-3706.jpg?size=626&ext=jpg");
+    background-repeat: no-repeat;
+    margin-right: 2px;
+}
+
+
+/* Updated CSS for Fancy Fintech Recommendation Design */
+.stock-recommendation {
+    background-color: sandybrown;
+    color: black;
+    font-size:x-large;
+    font-weight:bold;
+    padding: 40px;
+    border-radius: 12px; /* Smaller rounded corners for a sleek look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+    margin: 40px auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+    .stock-recommendation::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        background-image: radial-gradient(circle at 50% 50%, #e6efff, #c0dbff); /* Blue gradient */
+        transform: rotate(10deg); /* Rotate the gradient slightly */
+        opacity: 0.3;
+    }
+
+    .stock-recommendation img {
+        width: 120px; /* Reduced image width for better proportion */
+        height: 120px; /* Set the image height */
+        object-fit: cover; /* Maintain aspect ratio and cover the container */
+        border-radius: 50%; /* Circular shape for the image */
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+
+    .stock-recommendation .text-container {
+        background-color: #fff; /* White background for text */
+        padding: 20px; /* Reduced padding */
+        border-radius: 0 0 12px 12px; /* Rounded corners for the bottom */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .stock-recommendation h2 {
+        font-size: 24px; /* Slightly reduced font size */
+        font-weight: bold;
+        margin-bottom: 10px; /* Reduced margin */
+    }
+
+    .stock-recommendation p {
+        font-size: 18px; /* Slightly reduced font size */
+        line-height: 1.6;
+        margin-bottom: 15px; /* Reduced margin */
+    }
+
+    .stock-recommendation .cta-button {
+        display: inline-block;
+        background-color: #4f84ff; /* Blue button color */
+        color: #fff; /* White text color */
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px 24px;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .stock-recommendation .cta-button:hover {
+            background-color: #2a62cc; /* Darker blue on hover */
+        }
+
+
+
+.right {
+    width: 70%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    padding-top: 20px;
+    padding-right: 25px;
+    background-color: wheat;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-box-container {
+    flex: 1 1 auto;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Adjusted to start chat messages from the top */
+    background-color: antiquewhite;
+    overflow-y: auto; /* Show the scrollbar when needed */
+    /* Remove overflow: hidden to show the scrollbar */
+}
+
+.chat-messages {
+    flex: 1 1 auto;
+    overflow-y: auto; /* Use auto to show scrollbar when needed */
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fcefe1;
+    color:black;
+}
+
+.chat-input-container {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.user-input {
+    flex-grow: 1;
+    margin-right: 15px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+    width: 80%;
+}
+
+.send-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.user-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: burlywood;
+}
+
